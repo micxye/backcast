@@ -7,11 +7,11 @@ var AppView = Backbone.View.extend({
     this.videos.search();
     this.render();
     this.videoPlayer = new VideoPlayerView({'collection': this.videos});
-    this.$('.player').html(this.videoPlayer.render().$el);
+    this.$('.player').html(this.videoPlayer.$el);
     this.videoList = new VideoListView({'collection': this.videos});
-    this.$('.list').html(this.videoList.render().$el);
+    this.$('.list').html(this.videoList.$el);
     this.search = new SearchView({ 'collection': this.videos });
-    this.$('.search').html(this.search.render().$el);
+    this.$('.search').html(this.search.$el);
   },
 
 

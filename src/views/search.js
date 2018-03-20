@@ -1,7 +1,6 @@
 var SearchView = Backbone.View.extend({
   initialize: function() {
-    
-
+    this.render();
   },
 
   events: {
@@ -10,13 +9,21 @@ var SearchView = Backbone.View.extend({
   },
 
   enterTriggerSearch: function(event) {
-    if (event.keyCode == 13) {
+    if (event.keyCode === 13) {
       this.triggerSearch();
     }
   },
 
+  //  createDebouncedSearch: function(){
+  //     return _.debounce(this.triggerSearch, 200);
+  // },
+
+  //debouncedSearch: (function(){ return this.createDebouncedSearch()}),
+  
+
+
   triggerSearch: function() {
-    this.collection.search(this.$('input').val());
+    this.collection.debouncedSearch(this.$('input').val());
   },
 
   render: function() {
