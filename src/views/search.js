@@ -14,14 +14,6 @@ var SearchView = Backbone.View.extend({
     }
   },
 
-  //  createDebouncedSearch: function(){
-  //     return _.debounce(this.triggerSearch, 200);
-  // },
-
-  //debouncedSearch: (function(){ return this.createDebouncedSearch()}),
-  
-
-
   triggerSearch: function() {
     this.collection.debouncedSearch(this.$('input').val());
   },

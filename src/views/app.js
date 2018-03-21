@@ -12,6 +12,8 @@ var AppView = Backbone.View.extend({
     this.$('.list').html(this.videoList.$el);
     this.search = new SearchView({ 'collection': this.videos });
     this.$('.search').html(this.search.$el);
+    this.autoPlay = new AutoPlayView({ 'collection': this.videos });
+    this.$('.navbar').append(this.autoPlay.$el);
   },
 
 
